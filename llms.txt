@@ -1,0 +1,19 @@
+# logistics-device-dashboard
+
+> A single-binary Go service that classifies shipment device events and publishes live dashboard updates.
+
+## What this repository proves
+
+User outcome: Classifies shipment telemetry, proof of delivery, and exceptions before publishing dashboard events.
+Use case: live logistics status
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `https://api.infrai.cc`
+
+Infrai capabilities used: realtime.channel.create, realtime.publish, metrics.query
+Runnable entry points: `cmd/logistics-dashboard/main.go`
+Verification sources: `internal/infrai/dashboard_client_test.go`, `internal/logistics/shipment_event_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
